@@ -1,9 +1,10 @@
 # DefiNode Upgrader
 
-The ```upgrade.sh`` script with upgrade your definode iff
+The ```upgrade.sh``` script with upgrade your definode iff
 
 - It is placed in the standard folder ```$HOME/.defi```
 - You used cron to manage your defid
+- You run Linux X86_64
 
 ## Usage
 
