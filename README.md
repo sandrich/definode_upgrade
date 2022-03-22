@@ -31,7 +31,7 @@ Upgrade to 2.7.0-alpha with snapshot
 ./upgrade.sh 2.7.0-alpha true
 Disable CRON: [DONE]
 Stop dfid: [DONE]
-Updating defi node v.2.6.2: [DONE]
+Updating defi node v.2.7.0-alpha: [DONE]
 Setup from snapshot: [DONE]
 Enable CRON: [DONE]
 .:[ DONE ]:.
