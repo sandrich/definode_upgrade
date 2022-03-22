@@ -6,6 +6,14 @@ The ```upgrade.sh``` script with upgrade your definode iff
 - You used cron to manage your defid
 - You run Linux X86_64
 
+Steps it will take
+
+1. Disable CRON
+2. Kill defid
+3. Download update
+4. If snapshot delete old chain and restore from snapshot
+5. Restore CRON
+
 ## Usage
 
 ```
