@@ -41,7 +41,7 @@ cp defichain-${DFI_RELEASE}/bin/* .defi/
 rm -rf defichain-${DFI_RELEASE}*
 echo -e $DONE
 
-if [ -n "$DFI_SNAPSHOT" ];
+if [ "$DFI_SNAPSHOT" == "true" ];
 then
   echo -n "Setup from snapshot: "
   cd .defi

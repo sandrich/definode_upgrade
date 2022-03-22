@@ -21,3 +21,9 @@ Upgrade to 2.7.0-alpha with snapshot
 ```
 ./upgrade.sh 2.7.0-alpha true
 ```
+
+Upgrade to 2.7.0-alpha without snapshot
+
+```
+./upgrade.sh 2.7.0-alpha
+```
