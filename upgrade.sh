@@ -1,7 +1,7 @@
 #!/bin/bash
 
-index=$(curl -s http://snapshot-de.mydefichain.com/index.txt | tail -1)
-file="http://snapshot-de.mydefichain.com/${index}"
+index=$(curl -s https://snapshot-de.mydefichain.com/index.txt | tail -1)
+file="https://snapshot-de.mydefichain.com/${index}"
 
 DFI_FOLDER=$HOME
 DFI_RELEASE=$1
