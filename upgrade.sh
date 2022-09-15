@@ -16,6 +16,20 @@ then
   exit 2
 fi
 
+echo -n "Downloading binary and checking SHA256: "
+cd $DFI_FOLDER
+wget -q https://github.com/DeFiCh/ain/releases/download/v${DFI_RELEASE}/defichain-${DFI_RELEASE}-x86_64-pc-linux-gnu.tar.gz
+wget -q https://github.com/DeFiCh/ain/releases/download/v${DFI_RELEASE}/defichain-${DFI_RELEASE}-x86_64-pc-linux-gnu.tar.gz.SHA256
+
+sha256sum -c defichain-${DFI_RELEASE}-x86_64-pc-linux-gnu.tar.gz.SHA256 > /dev/null
+
+if [ $? -ne 0 ]; then
+  echo "FAILED CHECKSUM!"
+  exit 1
+fi
+
+echo -e $DONE
+
 echo -n "Disable CRON: "
 crontab -l > $DFI_FOLDER/cron_tmp
 echo "" | crontab -
@@ -34,8 +48,7 @@ fi
 echo -e $DONE
 
 echo -n "Updating defi node v.${DFI_RELEASE}: "
-cd $DFI_FOLDER
-wget -q https://github.com/DeFiCh/ain/releases/download/v${DFI_RELEASE}/defichain-${DFI_RELEASE}-x86_64-pc-linux-gnu.tar.gz
+
 tar xzf defichain-${DFI_RELEASE}-x86_64-pc-linux-gnu.tar.gz
 cp defichain-${DFI_RELEASE}/bin/* .defi/
 rm -rf defichain-${DFI_RELEASE}*
