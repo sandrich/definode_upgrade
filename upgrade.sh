@@ -11,9 +11,15 @@ DONE="[\e[32mDONE\e[39m]"
 if [[ $# -lt 1 ]];
 then
   echo "Usage: $0 [release] [snapshot]"
-  echo "release - Release number like 2.6.2"
+  echo "release - Release number like 2.6.2 or latest for the latest version"
   echo "snapshot - true if you like to restore from current snapshot"
   exit 2
+fi
+
+if [ "$DFI_RELEASE" == "latest" ];
+then
+  DFI_RELEASE=$(curl -sL https://api.github.com/repos/DeFiCh/ain/releases/latest | jq -r ".tag_name")
+  DFI_RELEASE=${DFI_RELEASE:1}
 fi
 
 echo -n "Downloading binary and checking SHA256: "
